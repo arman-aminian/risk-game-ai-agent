@@ -33,26 +33,33 @@ When the values of the leaves are determined the tree will be passed on to the m
 
 ### 3.2. Heuristics and Simplification
 #### 3.2.1. Drafting Phase
-Supplying units to territories can be a tricky task; in the sense that we want to improve our attack power but also make sure of having sufficient defense power in territories that are in danger of getting attacked. Deploying units in countries adjacent to enemy territories could be a smart way of keeping balance between these two goals.
-**Draft Simplification:**
+Supplying units to territories can be a tricky task; in the sense that we want to improve our attack power but also make sure of having sufficient defense power in territories that are in danger of getting attacked. Deploying units in countries adjacent to enemy territories could be a smart way of keeping balance between these two goals.<br>
+
+**Draft Simplification:**<br>
 Predicting and including all possible draft scenarios in the prediction tree will lead to a complex tree that would face the problems mentioned before; therefore, one of the simplifications made is that we use a drafting heuristic which is proved to always have the best possible result and predict that the opponents make this approach in drafting as well ; In other words , we remove the drafting results as possibilities form the prediction tree and change them to definitive draft scenarios.
-In order to do so, we take the following steps:
-**Draft Heuristic:**
-**Step 1:** Taking the summation of all units in enemy countries y adjacent to
+
+In order to do so, we take the following steps:<br>
+**Draft Heuristic:**<br>
+**Step 1:** <br>
+aking the summation of all units in enemy countries y adjacent to
 country x will give a measure which we call Border Security Threat (BST) in x.
 
-<img src="Formulas/f1.png" height="50">
-**Step 2:** Dividing this BST by the units situated in x gives a Border Security Ratio (BSR) which can be compared among all border countries.
+<img src="Formulas/f1.png" height="50"><br>
 
-<img src="Formulas/f2.png" height="60">
+**Step 2:** <br>
+Dividing this BST by the units situated in x gives a Border Security Ratio (BSR) which can be compared among all border countries.<br>
+<img src="Formulas/f2.png" height="60"><br>
 Countries with a high BSR are more likely to be conquered by an enemy player, since the number of enemy units in adjacent enemy countries are relatively higher than the number of units on the country itself. Choosing countries with a high BSR to supply to will increase their defensive strength by lowering the BSR. Supplying units to countries with a lower BSR, meaning that they already have a better defensive stance,
-will increase their offensive strength, raising the chances of a successful attack from these countries.
-**Step 3:** Normalizing the BSR by dividing it by the sum of all BSRs of countries, a player owns, will give a direct measurement by which someone could arrange units. The Normalized Border Security Ratio (NBSR) is calculated by:
-<img src="Formulas/f3.png" height="60">
+will increase their offensive strength, raising the chances of a successful attack from these countries.<br>
+
+**Step 3:** <br>
+Normalizing the BSR by dividing it by the sum of all BSRs of countries, a player owns, will give a direct measurement by which someone could arrange units. The Normalized Border Security Ratio (NBSR) is calculated by:
+<img src="Formulas/f3.png" height="60"><br>
 It gives a direct ratio of how the units could be distributed among countries.
 At this point we can see there would be a problem with this ratios because some data is irrelevant , and we don’t want to add units to all our territories so we set a threshold in between steps two and three by sorting the BSRx data in a descending order(we are focusing more on making the defense power stronger) , divide the data from middle and set the numbers in the lower half to zero.
-**Step 4:**
-<img src="Formulas/f4.png" height="70">
+
+**Step 4:** <br>
+<img src="Formulas/f4.png" height="70"><br>
 Step 4 will be continued until no more available units are left to add.
 
 #### 3.2.2. Attacking Phase
@@ -71,11 +78,11 @@ territories that the map has.
 2. Theratioofthenumberofalltheunitsaplayerownstoallunitsthatare
 in the map.
 3. Foreachterritoryxtheplayerowns,foreachenemyterritoryyadjacent
-to it we calculate :
-<img src="Formulas/f5.png" height="70">
+to it we calculate :<br>
+<img src="Formulas/f5.png" height="70"><br>
 After that we calculate the average of all z’s and the result is the third feature we use. It shows our defensive power and the closer it gets to one it shows we’ve got higher defensive strength.
-4. Foreachterritoryxtheplayerowns,ifyisnumberofneighborenemy territories, and z is the number of neighbor territories the player owns , p will be calculated :
-<img src="Formulas/f6.png" height="60">
+4. Foreachterritoryxtheplayerowns,ifyisnumberofneighborenemy territories, and z is the number of neighbor territories the player owns , p will be calculated :<br>
+<img src="Formulas/f6.png" height="60"><br>
 After that we calculate the average of all p’s = AVGp.
 (1 – AVGp) indicates how dense and close together our territories are which the higher the better because a winning strategy for this game for example when there are continents, is to focus on one continent and to conquer it all and then move to other continents.
 
