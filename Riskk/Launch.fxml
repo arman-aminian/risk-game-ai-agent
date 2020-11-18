@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="LaunchController">
+   <children>
+      <TextField fx:id="playerNum" alignment="CENTER" layoutX="228.0" layoutY="166.0" prefHeight="26.0" prefWidth="162.0" promptText="enter number of players" />
+      <TextField fx:id="firstPlayer" alignment="CENTER" layoutX="235.0" layoutY="207.0" promptText="first player" />
+      <TextField fx:id="secondPlayer" alignment="CENTER" layoutX="235.0" layoutY="244.0" promptText="second player" />
+      <TextField fx:id="thirdPlayer" alignment="CENTER" layoutX="235.0" layoutY="278.0" promptText="third player" />
+      <TextField fx:id="fourthPlayer" alignment="CENTER" layoutX="235.0" layoutY="315.0" promptText="4th player" />
+      <Button fx:id="enterButton" layoutX="220.0" layoutY="362.0" mnemonicParsing="false" onAction="#enterButton" prefHeight="26.0" prefWidth="178.0" text="Enter the game" />
+      <CheckBox fx:id="firstPlayerIsAI" layoutX="428.0" layoutY="211.0" mnemonicParsing="false" />
+      <CheckBox fx:id="secondPlayerIsAI" layoutX="428.0" layoutY="248.0" mnemonicParsing="false" />
+      <CheckBox fx:id="thirdPlayerIsAI" layoutX="428.0" layoutY="282.0" mnemonicParsing="false" />
+      <CheckBox fx:id="fourthPlayerIsAI" layoutX="428.0" layoutY="319.0" mnemonicParsing="false" />
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="412.0" layoutY="179.0" prefHeight="26.0" prefWidth="46.0" text="AI" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="gameLogo" fitHeight="133.0" fitWidth="341.0" layoutX="184.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/risklogo.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="61.0" fitWidth="84.0" layoutX="24.0" layoutY="111.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/israa.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="75.0" fitWidth="93.0" layoutX="25.0" layoutY="195.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/daa.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="69.0" fitWidth="74.0" layoutX="30.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/nazi.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="53.0" fitWidth="84.0" layoutX="24.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@images/arabia.jpg" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
