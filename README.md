@@ -53,7 +53,7 @@ Countries with a high BSR are more likely to be conquered by an enemy player, si
 will increase their offensive strength, raising the chances of a successful attack from these countries.<br>
 
 **Step 3:** <br>
-Normalizing the BSR by dividing it by the sum of all BSRs of countries, a player owns, will give a direct measurement by which someone could arrange units. The Normalized Border Security Ratio (NBSR) is calculated by:
+Normalizing the BSR by dividing it by the sum of all BSRs of countries, a player owns, will give a direct measurement by which someone could arrange units. The Normalized Border Security Ratio (NBSR) is calculated by:<br>
 <img src="Formulas/f3.png" height="60"><br>
 It gives a direct ratio of how the units could be distributed among countries.
 At this point we can see there would be a problem with this ratios because some data is irrelevant , and we don’t want to add units to all our territories so we set a threshold in between steps two and three by sorting the BSRx data in a descending order(we are focusing more on making the defense power stronger) , divide the data from middle and set the numbers in the lower half to zero.
